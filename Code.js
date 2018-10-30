@@ -181,7 +181,7 @@ function GetInput()
     // Data for Object SETTINGS
     this.spreadsheet = spreadsheet.getResponseText();
     this.document = document.getResponseText();
-    this.folderName = CheckFolder( text );
+    this.folderName = DriveApp.createFolder( text ).getUrl();
   
     // Generate URL path
     this.url = ui.alert( "Url of invoices generated", this.folderName, ui.ButtonSet.OK );
