@@ -14,24 +14,28 @@
  *================================================================================================================*/
 
 /**
+*
+* Instance the GetInput
+*/ 
+var data = new GetInput();
+
+/**
  * Project Settings
  * @type {JSON}
  */
 SETTINGS = {
 
-    // Spreadsheet ID (template filled with your data)
-    // The id is a unique set of characters that can be found in the spreadsheet url
-    spreadsheetId: '<your_spreadsheet_id>',
+    // Spreadsheet Url (template filled with your data)
+    spreadsheetUrl: data.spreadsheet,
 
     // Spreadsheet name
     sheetName: "Data",
 
-    // Document Id
-    documentId: "<your_document_id>",
+    // Document Url
+    documentUrl: data.document,
 
     // Folder id
-    folderId: '<your_folder_id>'
-
+    folderUrl: data.folderName
 };
 
 
@@ -129,6 +133,59 @@ function sendInvoice() {
     }
 }
 
+/**
+ *
+ * Configure path for invoices
+ */
+function GetInput()
+{
+   // Get name spreadsheet
+    var app = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Data");
+    var ui = SpreadsheetApp.getUi();
+  
+  // Validation the inputs
+  do {
+    var spreadsheet = ui.prompt( "Setup","First enter spreadsheet URL", ui.ButtonSet.OK_CANCEL );
+    var document = ui.prompt( "Setup","Now enter document URL", ui.ButtonSet.OK_CANCEL );
+    var folder = ui.prompt( "Setup","I need a name for invoice folder", ui.ButtonSet.OK_CANCEL );
+    var response = ui.alert( "Confirm", ui.ButtonSet.YES_NO)
+    
+    var control = true;
+    var cancel = false;
+    
+    if( spreadsheet == '' || spreadsheet.getSelectedButton() == ui.Button.CANCEL )
+    {
+      cancel = true;
+    }
+    else if( document == '' || document.getSelectedButton() == ui.Button.CANCEL )
+    {
+      cancel = true;
+    }
+    else if( folder == '' || folder.getSelectedButton() == ui.Button.CANCEL )
+    {
+      cancel = true;
+    }
+    
+    if( response == ui.Button.YES && cancel == false)
+    {
+      control = false;
+    } else if( cancel == true )
+    {
+      ui.alert( "Fill in all the fields.", ui.ButtonSet.OK );
+    }
+  }
+    while( control );
+    
+    var text = folder.getResponseText();
+  
+    // Data for Object SETTINGS
+    this.spreadsheet = spreadsheet.getResponseText();
+    this.document = document.getResponseText();
+    this.folderName = CheckFolder( text );
+  
+    // Generate URL path
+    this.url = ui.alert( "Url of invoices generated", this.folderName, ui.ButtonSet.OK );
+}
 
 /**
  * Convert a Google Docs into a PDF file
