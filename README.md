@@ -13,10 +13,7 @@ At Sheetgo we have a database of paid clients in Google Sheets and we need to se
 3. Now copy and save the ID of the document.
 4. Now fill out the requisite data in the spreadsheet. Note: Do not change the column headers in the spreadsheet as they correspond to tags in the document. Copy the ID of the spreadsheet.
 5. On the tab “count” in the spreadsheet, you can set the invoice number for the first invoice by swapping out the 0 that is in there. For each new invoice the number will increment by 1.
-6. Now, create a folder on Google Drive to store newly created invoices. You’ll also need to copy this ID for future use.
-7. Go back to the spreadsheet and click on Tools and then Script Editor to edit the script.
-8. Now just substitute your unique Spreadsheet and Folder IDs. Paste the spreadsheet ID that you copied in step 3 in between the quotes, substituting any existing values. Do the same things with the ID of the folder that you copied in step 5 and the document ID in step 2.
-9. Congrats! You have configured your script. Now to use it go back to the spreadsheet and select the menu item that you just created, Invoice Generator and then create invoices. The document(s) will be created if the column “Sent?” is blank. After creating the value is changed automatically to “Yes” and a link with a PDF is automatically saved.
+6. Congrats! You have configured your script. Now to use it go back to the spreadsheet and select the menu item that you just created, Invoice Generator and then create invoices. Just fill in the fields with the spreadsheet URL, the URL of the document, and choose a name for the invoice folder. The document(s) will be created if the column “Sent?” is blank. After creating the value is changed automatically to “Yes” and a link with a PDF is automatically saved.
 
 
 
