@@ -8,22 +8,11 @@ At Sheetgo we have a database of paid clients in Google Sheets and we need to se
 
 ## How to configure
 
-1. To begin using first create a copy of our invoice document template at this <a href="https://docs.google.com/document/d/14oTfL_zUbBdRD4VXY8U0NAJjQ4cKNxHGBax-bfH5NDs/copy" target="_blank">link</a>, and a copy of our invoice spreadsheet template at this <a href="https://docs.google.com/spreadsheets/d/1uaHmsl_-R2wJyt6HE3NpUSKII_Cuk5D90BTnK-YDbYY/copy" target="_blank">link</a>.
-2. In the document, add your logo and your company data anywhere you see these brackets ‘< >’, the words / values contained between the percent symbols (%) will be automatically substitutes based on the data in the spreadsheet.
-3. Now copy and save the ID of the document.
-4. Now fill out the requisite data in the spreadsheet. Note: Do not change the column headers in the spreadsheet as they correspond to tags in the document. Copy the ID of the spreadsheet.
-5. On the tab “count” in the spreadsheet, you can set the invoice number for the first invoice by swapping out the 0 that is in there. For each new invoice the number will increment by 1.
-6. Now, create a folder on Google Drive to store newly created invoices. You’ll also need to copy this ID for future use.
-7. Go back to the spreadsheet and click on Tools and then Script Editor to edit the script.
-8. Now just substitute your unique Spreadsheet and Folder IDs. Paste the spreadsheet ID that you copied in step 3 in between the quotes, substituting any existing values. Do the same things with the ID of the folder that you copied in step 5 and the document ID in step 2.
-9. Congrats! You have configured your script. Now to use it go back to the spreadsheet and select the menu item that you just created, Invoice Generator and then create invoices. The document(s) will be created if the column “Sent?” is blank. After creating the value is changed automatically to “Yes” and a link with a PDF is automatically saved.
-
-
-
-## Version 
-
-+ 1.0.0 - Initial release.
-
+1. Create a copy of our invoice spreadsheet template at <a href="https://docs.google.com/spreadsheets/d/1uaHmsl_-R2wJyt6HE3NpUSKII_Cuk5D90BTnK-YDbYY/copy" target="_blank">link</a>. Now the files are saved to your Google Drive.
+2. Inside the spreadsheet, on the instruction tab, simply follow the instructions provided. First click on **‘Install Solution’** to configure your Invoice Generator Template. You will need to authorize the script to run and login using your Google account.
+3. Open the Invoice folder that has been created inside your Google Drive by clicking the link on the instruction tab. Open the ‘Invoice Template’ document, add your logo and your company data anywhere you see these brackets ‘< >’ (see on the image below), the words/values contained between the percent symbols (%) will be automatically substituted based on the data in the spreadsheet.
+4. Back inside the Invoice data spreadsheet, follow the next step and thus go to the ‘Data’ tab to overwrite the dummy data and add your invoices.
+5. To generate the Invoices PDFs, go to the spreadsheet Menu bar -> ‘Invoice Generator’ -> ‘Generate Invoices’. Your invoice PDFs are now automatically created in the Invoice Folder inside your Google Drive.
 
 
 ## More information
